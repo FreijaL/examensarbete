@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English+SC&display=swap');
+
+$titleFont: "Cinzel Decorative", serif;
+$breadFont: "IM Fell English SC", serif;
+
+$primaryBlack: #1D1E21;
+$primaryWhite: #ffffff;
+$primaryRed: #9E1818;
+$primaryBlue: #153E8D;
+$primaryGreen: #156321;
+$primaryYellow: #D1C02F;
+
+$cursor: url(../svg/wand.svg), pointer;
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
