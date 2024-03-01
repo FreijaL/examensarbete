@@ -1,0 +1,71 @@
+@import "../../variables";
+
+// .backdrop {
+//     width: 100dvw;
+//     height: 100dvh;
+//     background-color: transparent;
+//     position: absolute;
+//     top: 0;
+// }
+
+.pageContainer {
+    // padding: 5rem 20rem 10rem 20rem;
+    width: 50rem;
+    height: 40rem;
+    position: fixed;
+    top: calc(50% - 20rem); // half of width
+    left: calc(50% - 25rem);
+//     // top: 50%;
+//     // left: 50%;
+//     // transform: translate(-50%, -50%);
+    background: rgb(0, 0, 0, 1);
+    border-radius: 30px;
+    z-index: 2;
+    @include flex-column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.houseLogoContainer {
+    overflow: hidden;
+}
+
+.houseLogo {
+    width: 10rem;
+    height: 10rem;
+    // height: 200px;
+    // object-fit: cover;
+
+}
+
+.ulColorTheme {
+    width: 25rem;
+    color: var(--text);
+    list-style: none;
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding: 0;
+    font-size: 28px;
+}
+
+.ulColorTheme li:hover {
+    transform: scale(1.2);
+    text-shadow: 0 8px 5px var(--textShadow);
+}
+
+.button {
+    color: var(--background);
+    width: 2rem;
+    height: 4.8rem;
+    border: 2px solid var(--background);
+    border-radius: 10rem 10rem 0 0;
+    font-family: inherit;
+    font-weight: 700;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    padding-left: 5px;
+}

@@ -1,0 +1,36 @@
+@import "/src/variables";
+
+.menuContainer {
+    width: 22rem;
+    height: 100dvh;
+    background-color: rgb(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+}
+
+.menuIcon {
+    width: 5rem;
+    height: 5rem;
+    z-index: 5;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+
+.menuUl {
+    list-style: none;
+    position: relative;
+    top: 15rem;
+    @include flex-column;
+    align-items: start;
+    gap: 4rem;
+    font-size: $h1FontSize;
+}
+
+.menuUl li {
+    color: var(--text);
+}
+
+.menuUl li:hover {
+    text-shadow: 0 8px 5px var(--text);
+}

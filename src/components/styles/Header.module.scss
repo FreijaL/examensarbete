@@ -1,0 +1,33 @@
+@import "/src/variables";
+
+.headerContainer {
+    @include flex-row;
+    font-family: $titleFont;
+    font-size: $h1FontSize;
+    padding: 0px 20px;
+    color: var(--text);
+}
+
+.menuIconContainer {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.menuIcon {
+    width: 5rem;
+    height: 5rem;
+    z-index: 5;
+    position: relative;
+}
+
+.active {
+    position: fixed;
+}
+
+.linkIcon {
+    width: 4rem;
+    height: 4rem;
+}
