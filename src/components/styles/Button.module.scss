@@ -1,0 +1,13 @@
+@import "../../variables";
+
+.default {
+    color: var(--background);
+    width: 3rem;
+    height: 4.2rem;
+    border: 3px solid var(--background);
+    border-radius: 10rem 10rem 0 0;
+    font-family: inherit;
+    font-weight: 700;
+    text-orientation: upright;
+    padding-left: 5px;
+}

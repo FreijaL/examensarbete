@@ -1,0 +1,13 @@
+@import "../../variables";
+
+
+.spellContainer {
+    width: 22rem;
+    min-height: 18rem;
+    margin: 1rem;
+    font-size: 1.5em;
+}
+
+.spellName {
+    color: var(--text);
+}

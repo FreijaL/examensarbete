@@ -15,22 +15,3 @@
 .headingContainer h2 {
     padding-top: 1rem
 }
-
-.formContainer h3 {
-    padding: 2rem;
-}
-
-.form {
-    @include flex-column;
-    gap: 2rem
-}
-
-.answerContainer {
-    @include flex-row;
-    justify-content: center;
-}
-
-.radioButton {
-    width: 1.2rem;
-    height: 1.2rem;
-}

@@ -1,0 +1,68 @@
+@import "../../variables";
+
+
+
+.navLink {
+    font-size: 2em;
+    text-decoration: none;
+    margin: 0 10px;
+    color: $primaryWhite;
+    padding: 0 10px 10px 10px;
+    border-radius: 1rem;
+}
+
+.navLink:hover, .active {
+    background-color: $primaryWhite;
+    color: $primaryBlack;
+}
+
+.arrow {
+    font-size: 2em;
+    margin: 10px;
+    text-decoration: none;
+    color: $primaryWhite;
+    padding-bottom: 10px;
+    border-radius: 1rem;
+}
+
+.arrow:hover {
+    background-color: $primaryWhite;
+    color: $primaryBlack;
+}
+
+
+// .navLink {
+//     padding: 10px;
+//     margin: 0 5px;
+//     color: #333;
+//     text-decoration: none;
+//     border: 2px solid $primaryWhite;
+//     border-radius: 5px;
+//     color: $primaryWhite;
+// }
+
+// .navLink:active {
+//     background-color: $primaryWhite;
+//     color: $primaryBlack;
+// }
+
+// .navLink:hover {
+//     background-color: $primaryWhite;
+//     color: $primaryBlack;
+//     // cursor: pointer;
+// }
+
+// .arrow {
+//     font-size: 1.5em;
+//     border: 1px solid $primaryWhite;
+//     border-radius: 5px;
+//     text-decoration: none;
+//     background-color: $primaryBlack;
+//     color: $primaryWhite;
+//     padding-top: 10px 10px 0 10px;
+// }
+
+// .arrow:hover {
+//     background-color: $primaryWhite;
+//     color: $primaryBlack;
+// }

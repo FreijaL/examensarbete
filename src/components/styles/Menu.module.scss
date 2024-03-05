@@ -2,7 +2,7 @@
 
 .menuContainer {
     width: 22rem;
-    height: 100dvh;
+    height: 100%;
     background-color: rgb(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
@@ -20,10 +20,10 @@
 .menuUl {
     list-style: none;
     position: relative;
-    top: 15rem;
+    top: 20%;
     @include flex-column;
     align-items: start;
-    gap: 4rem;
+    gap: 3rem;
     font-size: $h1FontSize;
 }
 

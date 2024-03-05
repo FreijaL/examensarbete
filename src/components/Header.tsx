@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import style from "./styles/Header.module.scss";
 import Menu from "./Menu";
 import ColorTheme from "../components/ColorTheme";
@@ -16,6 +16,25 @@ function Header(): ReactNode {
     const [openColorTheme, setOpenColorTheme] = useState(false);
     const [flip, setFlip] = useState(false);
 
+    useEffect(() => {
+        function handleClick(e: MouseEvent){
+            setTimeout(() => {
+                
+                const menu = document.querySelector(".menuContainer");
+                console.log(menu);
+                if (showMenu && menu && !menu.contains(e.target as Node)){
+                    console.log(e.target);
+                    setShowMenu(false)
+                }
+            }, 0);
+        }
+
+        document.addEventListener("click", handleClick);
+        return () => {
+            document.removeEventListener("click", handleClick);
+        }
+    }, [showMenu])
+
     return (
         <>
             <header 
@@ -25,7 +44,7 @@ function Header(): ReactNode {
                 <section className={style.menuIconContainer}>
                     <motion.img 
                         onClick={() => (setShowMenu(prevstate => !prevstate), setFlip(!flip))}
-                        className={`${style.menuIcon} { showMenu ? ${style.active} : "" }`} 
+                        className={`${style.menuIcon} ${ showMenu ? style.active : style.inactive }`} 
                         src="../../svg/plattformKingCross.png" 
 
                         initial={{ scale: 1}}
@@ -35,10 +54,6 @@ function Header(): ReactNode {
                         }}
                         animate={{ rotateY: flip ? 360 : 0  }}
                         transition={{ duration: 1}}
-                        // variants={flipOnHover}
-                        // initial="initial"
-                        // whileHover="whilehover"
-
                     />
                 </section>
                 <h1
@@ -49,9 +64,7 @@ function Header(): ReactNode {
                     className={style.linkIcon} 
                     src="../../svg/hogwartsHouses.png" />
             </header>
-            {
-                showMenu ? <Menu /> : ""
-            }
+            <Menu isVisible={showMenu} />
             {
                 openColorTheme && <ColorTheme /> 
             }

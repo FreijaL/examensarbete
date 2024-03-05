@@ -44,11 +44,6 @@ function ColorTheme() {
                         className={style.themeBlue} 
                     >Ravenclaw</li>
                 </ul>
-                {/* <img 
-                    src={activeLogo} 
-                    alt="Hogwarts House logo" 
-                    className={style.houseLogo}
-                /> */}
                 <button 
                     onClick={() => (setCurrentTheme("dark"), setActiveLogo(logoHouses))}
                     className={`${style.themeDefault} ${style.button}`}
