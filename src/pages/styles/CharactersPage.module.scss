@@ -9,7 +9,7 @@
 .inputContainer {
     @include flex-column;
     gap: 1rem;
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .searchInput {
@@ -19,12 +19,13 @@
     color: $primaryWhite;
     font-size: 15px;
     text-align: center;
+    padding: 5px;
 }
 
-.searchInput:active {
-    border: none;
-    margin-inline: none;
-}
+// .searchInput:active {
+//     border: none;
+//     margin-inline: none;
+// }
 
 .selection {
     background-color: $primaryBlack;

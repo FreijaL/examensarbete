@@ -6,11 +6,27 @@ import logoRavenclaw from "/svg/ravenclaw.png";
 import logoHufflepuff from "/svg/hufflepuff.png";
 import logoSlytherin from "/svg/slytherin.png";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function ColorTheme() {
 
     const { theme, setCurrentTheme } = useTheme();
     const [activeLogo, setActiveLogo] = useState(logoHouses);
+
+    const buttonAnimation = {
+        initial: {
+            scale: 1,
+            boxShadow: "none"
+        },
+        whileHover: {
+            scale: 1.1,
+            boxShadow: "0 5px 15px var(--text)",
+            cursor: "url(../public/svg/wand.svg), pointer",
+        },
+        whileTap: {
+            scale: 1
+        }
+    }
 
     return (
         <section 
@@ -44,10 +60,14 @@ function ColorTheme() {
                         className={style.themeBlue} 
                     >Ravenclaw</li>
                 </ul>
-                <button 
+                <motion.button 
                     onClick={() => (setCurrentTheme("dark"), setActiveLogo(logoHouses))}
                     className={`${style.themeDefault} ${style.button}`}
-                >Dark</button>
+                    variants={buttonAnimation}
+                    initial="initial"
+                    whileHover="whileHover"
+                    whileTap="whileTap"
+                >Dark</motion.button>
             </main>
         </section>
     )

@@ -21,7 +21,7 @@ function Header(): ReactNode {
             setTimeout(() => {
                 
                 const menu = document.querySelector(".menuContainer");
-                console.log(menu);
+                // console.log(menu);
                 if (showMenu && menu && !menu.contains(e.target as Node)){
                     console.log(e.target);
                     setShowMenu(false)

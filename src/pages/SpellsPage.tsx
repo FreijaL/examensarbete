@@ -4,6 +4,7 @@ import Spells from "../components/Spells";
 import Button from "../components/Button";
 import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/SpellsPage.module.scss";
+import PixelBackground from "../components/PixelBackground";
 
 function SpellsPage() {
 
@@ -23,27 +24,24 @@ function SpellsPage() {
         const response = await fetch("https://hp-api.onrender.com/api/spells");
         const data: Spell[] = await response.json();
         setSpellsData(data); 
+        if (data.length > 0) {
+            getRandomSpell(data);
+        }
     }
 
-    const getRandomSpell = (): void => {
+    const getRandomSpell = (spells: Spell[]): void => {
         const randomIndex = Math.floor(Math.random() * spellsData.length);
-        const spell = spellsData[randomIndex];
+        const spell = spells[randomIndex];
         setRandomSpell(spell);
     }
 
     const handleNewSpell = () => {
-        getRandomSpell();
+        getRandomSpell(spellsData);
     }
 
     useEffect(() => {
         handleData(); 
     }, []);
-
-    useEffect(() => {
-        if (spellsData.length > 0) {
-            getRandomSpell();
-        }
-    }, [spellsData])
 
     return (
         <>
@@ -61,6 +59,7 @@ function SpellsPage() {
                     )
                 }
                 <Button name="New Spell" onClick={handleNewSpell} />
+                <PixelBackground newSpell={randomSpell} />
             </main>
         </>
     )

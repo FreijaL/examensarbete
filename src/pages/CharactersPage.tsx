@@ -113,7 +113,7 @@ function CharactersPage() {
                         name="House" 
                         id="house"
                     >
-                        <option value="default" defaultValue={""}></option>
+                        <option value="default" defaultValue={""}>All houses</option>
                         <option value="gryffindor">Gryffindor</option>
                         <option value="slytherin">Slytherin</option>
                         <option value="hufflepuff">Hufflepuff</option>
