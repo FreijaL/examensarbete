@@ -5,6 +5,7 @@ import ColorTheme from "../components/ColorTheme";
 import { motion } from "framer-motion";
 import { useTheme } from "../contexts/Theme.context";
 import { useNavigate } from "react-router-dom";
+import NavMenu from "./NavMenu";
 
 function Header(): ReactNode {
 
@@ -43,7 +44,7 @@ function Header(): ReactNode {
             >
                 <section className={style.menuIconContainer}>
                     <motion.img 
-                        onClick={() => (setShowMenu(prevstate => !prevstate), setFlip(!flip))}
+                        // onClick={() => (setShowMenu(prevstate => !prevstate), setFlip(!flip))}
                         className={`${style.menuIcon} ${ showMenu ? style.active : style.inactive }`} 
                         src="../../svg/plattformKingCross.png" 
 
@@ -64,6 +65,7 @@ function Header(): ReactNode {
                     className={style.linkIcon} 
                     src="../../svg/hogwartsHouses.png" />
             </header>
+            <NavMenu />
             <Menu isVisible={showMenu} />
             {
                 openColorTheme && <ColorTheme /> 

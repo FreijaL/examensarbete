@@ -3,8 +3,8 @@
 $titleFont: "Cinzel Decorative", serif;
 $breadFont: "IM Fell English SC", serif;
 
-$h1FontSize: 25px;
-$breadFontSize: 18px;
+$h1FontSize: 18px;
+$breadFontSize: 15px;
 
 $primaryBlack: #141414;
 $primaryWhite: #ffffff;
@@ -30,3 +30,14 @@ $cursor: url(../public/svg/wand.svg), pointer;
     justify-content: space-between;
     gap: 2rem;
 }
+
+@mixin hoverCard {
+    scale: 1.1;
+    transition: {
+        duration: 1s;
+    }
+}
+
+$breakpoint-large: 1600px;
+$breakpoint-tablet: 800px;
+$breakpoint-mobile: 420px;

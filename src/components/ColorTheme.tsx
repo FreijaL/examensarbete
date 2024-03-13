@@ -67,7 +67,7 @@ function ColorTheme() {
                     initial="initial"
                     whileHover="whileHover"
                     whileTap="whileTap"
-                >Dark</motion.button>
+                >White</motion.button>
             </main>
         </section>
     )

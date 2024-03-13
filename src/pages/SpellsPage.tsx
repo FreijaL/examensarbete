@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/SpellsPage.module.scss";
 import PixelBackground from "../components/PixelBackground";
+import Footer from "../components/Footer";
 
 function SpellsPage() {
 
@@ -61,6 +62,7 @@ function SpellsPage() {
                 <Button name="New Spell" onClick={handleNewSpell} />
                 <PixelBackground newSpell={randomSpell} />
             </main>
+            <Footer />
         </>
     )
 }

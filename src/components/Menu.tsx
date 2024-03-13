@@ -40,7 +40,7 @@ function Menu({isVisible}: MenuProps): JSX.Element {
                         // variants={menuAnimation}
                         initial="initial"
                         animate="visible"
-                        transition={{ staggerChildren: 0.2 }}
+                        transition={{ staggerChildren: 0.12 }}
                     >
                         <motion.li
                             onClick={ () => navigate("/spells")}
@@ -63,7 +63,7 @@ function Menu({isVisible}: MenuProps): JSX.Element {
                             whileHover={{ scale: 1.2}}
                         >Sorting Hat</motion.li>
                         <motion.li
-                            // onClick={ () => navigate("/spells")}
+                            onClick={ () => navigate("/photogallery")}
                             variants={menuAnimation}
                             whileHover={{ scale: 1.2}}
                         >Photo Gallery</motion.li>

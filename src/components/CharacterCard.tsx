@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 interface CardProps {
     image: string;
     name: string;
-    house: string;
-    theme: string;
+    house?: string;
+    theme?: string;
 }
 
 function CharacterCard({image, name, house, theme}: CardProps): JSX.Element {

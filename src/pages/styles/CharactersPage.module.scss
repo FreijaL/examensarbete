@@ -3,7 +3,7 @@
 
 .pageContainer {
     @include flex-column;
-    padding: 0 0 5rem 0;
+    margin-top: 2rem;
 }
 
 .inputContainer {
@@ -22,11 +22,6 @@
     padding: 5px;
 }
 
-// .searchInput:active {
-//     border: none;
-//     margin-inline: none;
-// }
-
 .selection {
     background-color: $primaryBlack;
     color: var(--text);
@@ -42,4 +37,11 @@
     flex-basis: 25%;
     gap: 3rem;
     padding: 0 0 5rem 0;
+}
+
+
+@media (min-width: $breakpoint-large) {
+    .inputContainer {
+        padding: 5rem 0;
+    }
 }

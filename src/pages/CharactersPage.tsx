@@ -4,6 +4,7 @@ import { Pagination } from "../components/Pagination";
 import CharacterCard from "../components/CharacterCard";
 import style from "./styles/CharactersPage.module.scss";
 import { useTheme } from "../contexts/Theme.context";
+import Footer from "../components/Footer";
 
 function CharactersPage() {
 
@@ -140,6 +141,7 @@ function CharactersPage() {
                     paginate={paginate}
                 />
             </main>
+            <Footer />
         </>
     )
 }

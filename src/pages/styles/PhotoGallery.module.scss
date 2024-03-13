@@ -1,0 +1,22 @@
+@import "../../variables";
+
+.pageContainer {
+    padding: 2rem 5rem;
+    @include flex-column;
+    gap: 2rem;
+}
+
+.photosContainer {
+    @include flex-row;
+}
+
+
+@media (min-width: $breakpoint-large) {
+    .pageContainer {
+        margin-top: 8rem;
+    }
+
+    .photosContainer {
+        margin-bottom: 2rem;
+    }
+}
