@@ -1,10 +1,6 @@
 import style from "./styles/Button.module.scss";
 import { motion } from 'framer-motion';
-
-interface ButtonProps {
-    name: string;
-    onClick: () => void;
-}
+import { ButtonProps } from "../interface/interface";
 
 function Button ({ name, onClick }: ButtonProps): JSX.Element {
     return (

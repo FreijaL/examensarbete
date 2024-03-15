@@ -1,18 +1,8 @@
 import style from "./styles/PixelBackground.module.scss";
 import { motion } from "framer-motion";
-
+import { pixelAnimation } from "../interface/animations";
 
 function PixelBackground({newSpell}) {
-
-    const pixelAnimation = {
-        initial: {
-            opacity: 1,
-        },
-        show: (i) => ({
-            opacity: 0,
-            transition: { duration: 1, delay: 0.01 * i}
-        })
-    }
 
     const shuffle = (a) => {
         var j, x, i;
@@ -27,10 +17,10 @@ function PixelBackground({newSpell}) {
 
     const getBlocks = () => {
         const { innerWidth, innerHeight } = window;
-        const blockSize = innerWidth * 0.01;
+        const blockSize = innerWidth * 0.025;
         const amountOfBlocks = Math.ceil(innerHeight / blockSize);
         const delays = shuffle([...Array(amountOfBlocks)].map((_, i) => i));
-        return delays.map((randomDelay, i) => {
+        return delays.map((randomDelay: any, i: any) => {
             return (
                 <motion.div 
                     className={style.block}

@@ -5,6 +5,8 @@ import CharacterCard from "../components/CharacterCard";
 import style from "./styles/CharactersPage.module.scss";
 import { useTheme } from "../contexts/Theme.context";
 import Footer from "../components/Footer";
+import { houseTheme } from "../functions/colorFunction";
+import { Character } from "../interface/interface";
 
 function CharactersPage() {
 
@@ -15,13 +17,14 @@ function CharactersPage() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [charactersPerPage] = useState<number>(12);
 
-    interface Character {
-        id: string;
-        name: string;
-        image: string;
-        house: string;
-        patronus?: string;
-        alive?: boolean;
+    const fetchData = async () => {
+        const response = await fetch("../../characters.json");
+        if (!response.ok) {
+            throw new Error("Faild to fetch data");
+        }
+        const data: Character[] = await response.json();            
+        setCharacters(data);
+        setOriginalCharacters(data);
     }
 
     function charactersImage(character: Character) {
@@ -33,15 +36,6 @@ function CharactersPage() {
     }
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("../../characters.json");
-            if (!response.ok) {
-                throw new Error("Faild to fetch data");
-            }
-            const data: Character[] = await response.json();
-            setCharacters(data);
-            setOriginalCharacters(data);
-        }
         fetchData();
     }, []);
 
@@ -50,20 +44,6 @@ function CharactersPage() {
     const currentCharacters = characters.slice(indexOfFirstCharacter, indexOfLastCharacter);
 
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-    function houseTheme(character: Character) {
-        if (character.house === "Gryffindor"){
-            return "#9e0808" 
-        } else if (character.house === "Slytherin"){
-            return "#1c7e2b"
-        } else if (character.house === "Hufflepuff"){
-            return "#E2B44E"
-        } else if (character.house === "Ravenclaw"){
-            return "#3358a3"
-        } else {
-            return "#ffffff"
-        }
-    }
 
     function searchInput(e: any){
         setCharacters(originalCharacters);
@@ -124,14 +104,16 @@ function CharactersPage() {
                 <section className={style.cardsContainer}>
                     {
                         currentCharacters.map(character => (
-                            <CharacterCard 
+                            <CharacterCard                             
                                 key={character.id}
+                                id={character.id}
                                 name={character.name}
                                 image={charactersImage(character)}
                                 house={character.house}
                                 theme={houseTheme(character)}
+                                characterData={character}
                             />
-                        ))
+                        ))                        
                     }
                 </section>
                 <Pagination 

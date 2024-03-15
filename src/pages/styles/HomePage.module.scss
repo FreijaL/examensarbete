@@ -9,15 +9,23 @@
 }
 
 .cardWrapper {
+    width: 85%;
     @include flex-row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    row-gap: 5rem;
     margin-top: 2rem;
 }
 
 @media (min-width: $breakpoint-large) {
     .mainContainer {
         margin-top: 8rem;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .cardWrapper {
+        width: 100%;
     }
 }

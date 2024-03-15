@@ -1,85 +1,222 @@
-{
-    "questions": [
-        {
-            "question": "Which of the following would you like the most people to call you?",
-            "answer": [
-                "Friendly",
-                "Booksmart",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        },
-        {
-            "question": "",
-            "answer": [
-                "one",
-                "two",
-                "three",
-                "four"
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "question": "What is the most important characteristic for you in a teacher?",
+        "options": [
+            {
+                "answer": "Creating a safe and supportive environment", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "Challenging your thoughts and ideas", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Modeling the right behavior", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Opening doors to new opportunities ", 
+                "house": "Slytherin"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What is your attitude towards taking risks?",
+        "options": [
+            {
+                "answer": "Risks should be carefully considered and planned to minimize loss", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "Risks can be exciting and educational but should be taken with caution", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Sometimes you have to take big risks to achieve great rewards", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Risks should always be weighed against the benefits and consequences for others", 
+                "house": "Hufflepuff"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What type of music do you prefer?",
+        "options": [
+            {
+                "answer": "Mysterious and dark atmosphere", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "Joyful and harmonious tones", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "Complex and deep melodies", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "High energy and pumping bass", 
+                "house": "Gryffindor"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Which environment do you thrive best in?",
+        "options": [
+            {
+                "answer": "A stimulating environment where you can explore new ideas and concepts", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "A harmonious and welcoming environment where you can be yourself", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "An exciting and challenging environment where you can push your limits", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "An environment where you can develop your skills", 
+                "house": "Slytherin"
+            },
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What characteristic is most important for success in your dream profession?",
+        "options": [
+            {
+                "answer": "Courage and determination", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Intelligence and creativity", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Cunning and strategy", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "Patience and thoroughness", 
+                "house": "Hufflepuff"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Which family tradition do you value the most?",
+        "options": [
+            {
+                "answer": "The pride and loyalty towards the family", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "The interesting conversations and exchange of knowledge", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "The sense of community and care for each other", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "The traditions and chances to create new experiences", 
+                "house": "Gryffindor"
+            },
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What is your primary motivation?",
+        "options": [
+            {
+                "answer": "Desire to make a difference in the world", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Spreading joy and friendship", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "Pursuit of knowledge", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Achieving wealth and success", 
+                "house": "Slytherin"
+            },
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is your preferred method of relaxation?",
+        "options": [
+            {
+                "answer": "Spending time in nature", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "Engaging in adrenaline-pumping activities", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Meditation and mindfulness", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "Solving puzzles or riddles", 
+                "house": "Ravenclaw"
+            },
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Which element do you feel most connected to?",
+        "options": [
+            {
+                "answer": "Earth", 
+                "house": "Hufflepuff"
+            },
+            {
+                "answer": "Fire", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Air", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Water", 
+                "house": "Slytherin"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is your favorite type of weather?",
+        "options": [
+            {
+                "answer": "Thunderstorm", 
+                "house": "Gryffindor"
+            },
+            {
+                "answer": "Fog", 
+                "house": "Slytherin"
+            },
+            {
+                "answer": "Snowfall", 
+                "house": "Ravenclaw"
+            },
+            {
+                "answer": "Sunshine after rain", 
+                "house": "Hufflepuff"
+            }
+        ]
+    }
+]

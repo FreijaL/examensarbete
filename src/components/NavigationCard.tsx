@@ -1,13 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import style from "./styles/NavigationCard.module.scss";
 import { motion } from "framer-motion";
-
-interface NavigationCardProps {
-    img: string,
-    imgName: string,
-    text: string,
-    onClick: () => void,
-}
+import { NavigationCardProps } from "../interface/interface";
 
 function NavigationCard({img, imgName, text, onClick}: NavigationCardProps): JSX.Element {
 

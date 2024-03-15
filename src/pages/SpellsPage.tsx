@@ -6,6 +6,7 @@ import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/SpellsPage.module.scss";
 import PixelBackground from "../components/PixelBackground";
 import Footer from "../components/Footer";
+import { Spell } from "../interface/interface";
 
 function SpellsPage() {
 
@@ -13,13 +14,6 @@ function SpellsPage() {
 
     const [spellsData, setSpellsData] = useState<Spell[]>([]);
     const [randomSpell, setRandomSpell] = useState<Spell | null >(null);
-
-    interface Spell {
-        id: string;
-        name: string;
-        type: string;
-        effect: string;
-    }
 
     const handleData = async () => {
         const response = await fetch("https://hp-api.onrender.com/api/spells");

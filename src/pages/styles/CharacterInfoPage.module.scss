@@ -1,0 +1,63 @@
+@import "../../variables";
+
+.pageContainer {
+    width: 100%;
+    @include flex-row;
+    justify-content: center;
+    gap: 5rem;
+    margin: 5rem 0;
+    font-size: 24px;
+}
+
+.imgContainer {
+    width: 15rem;
+    height: 25rem;
+    overflow: hidden;
+    padding: 15px 0 0 15px;
+    border-inline-start: 10px solid;
+    border-block-start: 10px solid;
+    border-image-source: 
+        radial-gradient( circle at top left, black, var(--text) 80%);
+    border-image-slice: 1;
+}
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textContainer {
+    @include flex-row;
+    gap: 5rem;
+    align-items: center;
+    text-align: start;
+}
+
+.textContainer span {
+    font-weight: bold;
+    font-family: $titleFont;
+    padding-left: 20px;
+}
+
+.textContainer p {
+    font-size: 16px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .pageContainer {
+        @include flex-column;
+        margin-top: 5rem;
+    }
+
+    .textContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: $breakpoint-large){
+    .pageContainer {
+        margin: 8rem 0;
+    }
+}

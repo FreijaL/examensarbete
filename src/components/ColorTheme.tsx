@@ -5,28 +5,31 @@ import logoGryffindor from "/svg/gryffindor.png";
 import logoRavenclaw from "/svg/ravenclaw.png";
 import logoHufflepuff from "/svg/hufflepuff.png";
 import logoSlytherin from "/svg/slytherin.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { buttonAnimation } from "../interface/animations";
 
 function ColorTheme() {
 
     const { theme, setCurrentTheme } = useTheme();
-    const [activeLogo, setActiveLogo] = useState(logoHouses);
+    const [activeLogo, setActiveLogo] = useState<string>(logoHouses);
 
-    const buttonAnimation = {
-        initial: {
-            scale: 1,
-            boxShadow: "none"
-        },
-        whileHover: {
-            scale: 1.1,
-            boxShadow: "0 5px 15px var(--text)",
-            cursor: "url(../public/svg/wand.svg), pointer",
-        },
-        whileTap: {
-            scale: 1
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        const savedLogo = localStorage.getItem('logo');
+
+        if (savedTheme && savedLogo) {
+            setCurrentTheme(savedTheme);
+            setActiveLogo(savedLogo);
         }
-    }
+    }, []);
+
+    const handleThemeChange = (theme, logo) => {
+        setCurrentTheme(theme);
+        setActiveLogo(logo);
+        localStorage.setItem('theme', theme);
+        localStorage.setItem('logo', logo);
+    };
 
     return (
         <section 
@@ -44,24 +47,24 @@ function ColorTheme() {
                 </section>
                 <ul className={style.ulColorTheme}>
                     <li
-                        onClick={() => (setCurrentTheme("red"), setActiveLogo(logoGryffindor))}
+                        onClick={() => (handleThemeChange("red", logoGryffindor))}
                         className={style.themeRed}
                     >Gryffindor</li>
                     <li
-                        onClick={() => (setCurrentTheme("green"), setActiveLogo(logoSlytherin))}
+                        onClick={() => (handleThemeChange("green", logoSlytherin))}
                         className={style.themeGreen}
                     >Slytherin</li>
                     <li
-                        onClick={() => (setCurrentTheme("yellow"), setActiveLogo(logoHufflepuff))}
+                        onClick={() => (handleThemeChange("yellow", logoHufflepuff))}
                         className={style.themeYellow}
                     >Hufflepuff</li>
                     <li
-                        onClick={() => (setCurrentTheme("blue"), setActiveLogo(logoRavenclaw))}
+                        onClick={() => (handleThemeChange("blue", logoRavenclaw))}
                         className={style.themeBlue} 
                     >Ravenclaw</li>
                 </ul>
                 <motion.button 
-                    onClick={() => (setCurrentTheme("dark"), setActiveLogo(logoHouses))}
+                    onClick={() => (handleThemeChange("dark", logoHouses))}
                     className={`${style.themeDefault} ${style.button}`}
                     variants={buttonAnimation}
                     initial="initial"
@@ -72,5 +75,19 @@ function ColorTheme() {
         </section>
     )
 }
+
+// function currentTheme(theme) {
+//     if (theme === "Gryffindor") {
+//         return logoGryffindor
+//     } else if (theme === "Hufflepuff") {
+//         return logoHufflepuff
+//     } else if (theme === "Ravenclaw") {
+//         return logoRavenclaw
+//     } else if (theme === "Slytherin") {
+//         return logoSlytherin
+//     } else {
+//         return logoHouses
+//     }
+// }
 
 export default ColorTheme;

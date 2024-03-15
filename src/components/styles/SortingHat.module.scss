@@ -5,5 +5,44 @@
 }
 
 .headingContainer h2 {
-    padding-top: 1rem
+    padding-top: 1rem;
+    @include flex-column;
+}
+
+.button {
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+    background-color: white;
+    border: none;
+    border-style: none;
+    border-radius: 1rem;
+    font-family: inherit;
+    // font-weight: bold;
+}
+
+.button:hover {
+    box-shadow: 0 5px 15px white;
+}
+
+.questionForm {
+    @include flex-column;
+    color: white;
+    font-family: $titleFont;
+}
+
+.form {
+    @include flex-column;
+    align-items: start;
+    gap: 2rem
+}
+
+.answerContainer {
+    @include flex-row;
+    justify-content: center;
+}
+
+.radioButton {
+    width: 1.2rem;
+    height: 1.2rem;
 }

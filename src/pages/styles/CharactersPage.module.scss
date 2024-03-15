@@ -12,6 +12,10 @@
     padding: 2rem 0;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 .searchInput {
     background-color: $primaryBlack;
     border: none;
@@ -41,6 +45,11 @@
 
 
 @media (min-width: $breakpoint-large) {
+    .pageContainer {
+        width: 80%;
+        margin: 0 10%;
+    }
+
     .inputContainer {
         padding: 5rem 0;
     }

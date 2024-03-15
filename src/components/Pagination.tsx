@@ -1,12 +1,13 @@
 import React from "react";
 import style from "./styles/Pagination.module.scss";
+import { PaginationProps } from "../interface/interface";
 
-interface PaginationProps {
-    charactersPerPage: number;
-    totalCharacters: number;
-    currentPage: number;
-    paginate: (pageNumber: number) => void;
-}
+// interface PaginationProps {
+//     charactersPerPage: number;
+//     totalCharacters: number;
+//     currentPage: number;
+//     paginate: (pageNumber: number) => void;
+// }
 
 export const Pagination: React.FC<PaginationProps> = ({totalCharacters, charactersPerPage, currentPage, paginate}) => {
 

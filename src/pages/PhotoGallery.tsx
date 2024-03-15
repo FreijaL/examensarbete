@@ -5,6 +5,7 @@ import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/PhotoGallery.module.scss";
 import { Pagination } from "../components/Pagination";
 import Footer from "../components/Footer";
+import { Image } from "../interface/interface";
 
 function PhotoGallery() {
 
@@ -13,12 +14,6 @@ function PhotoGallery() {
     const [photos, setPhotos] = useState<Image[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [photosPerPage] = useState<number>(6);
-
-    interface Image {
-        id: string;
-        imageName: string;
-        imageUrl: string;
-    }
 
     async function fetchPhotos() {
         const response = await fetch("../../images.json");

@@ -10,78 +10,144 @@ body {
   overflow-x: hidden;
 }
 
-.glitter, .glitter:after, .glitter:before {
+.glitterLeft {
   content: "";
-  background-color: none;
+  background-color: transparent;
   position: absolute;
   top: 0;
-  left: -650px;
+  left: -450px;
   right: 0;
   bottom: 0;
   z-index: -1;
   background-image: 
-    radial-gradient(1.5px 1.5px at 100px 50px, $primaryBlue, transparent),
-    radial-gradient(1px 1px at 190px 150px, $primaryGreen, transparent),
+    radial-gradient(1.5px 1.5px at 104px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 190px 150px, #fff, transparent),
     radial-gradient(2.5px 2.5px at 285px 260px, #fff, transparent),
-    radial-gradient(2px 2px at 700px 650px, #fff, transparent),
-    radial-gradient(2.5px 2.5px at 440px 350px, $primaryRed, transparent),
-    radial-gradient(2px 2px at 500px 100px, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 50px 200px, #fff, transparent),
+    radial-gradient(2px 2px at 700px 651px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 440px 355px, #fff, transparent),
+    radial-gradient(2px 2px at 531px 102px, #cac3c3, transparent),
+    radial-gradient(1.5px 1.5px at 68px 203px, #fff, transparent),
     radial-gradient(2.5px 2.5px at 175px 310px, #fff, transparent),
     radial-gradient(2px 2px at 220px 430px, #fff, transparent),
-    radial-gradient(2.5px 2.5px at 320px 600px, $primaryYellow, transparent),
-    radial-gradient(1.5px 1.5px at 45px 500px, #fff, transparent);
-    background-size:  700px 650px;
-    animation: snowAnimation 100s linear;
+    radial-gradient(2.5px 2.5px at 323px 600px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 45px 502px, #fff, transparent);
+    background-size:  450px 450px;
+    animation: glitterLeft 60s linear;
     animation-iteration-count: infinite;
 }
 
-.glitter:before {
-  margin-bottom: -150px;
-  opacity: 1;
-  filter: blur(1px);
-  animation-direction: reverse;
-  animation-duration: 30s;
-}
-
-.glitter:before {
-  margin-bottom: -125px;
-  opacity: 1;
-  // filter: blur(1px);
-  animation-direction: normal;
-  animation-duration: 40s;
-}
-
-.glitter:after {
-  margin-left: -150px;
-  opacity: 0.5;
-  // filter: blur(1px);
-  animation-direction: reverse;
-  animation-duration: 20s;
-}
-
-.glitter:after {
-  margin-left: 320px;
-  opacity: 0.5;
-  filter: blur(1px);
-  animation-direction: reverse;
-  animation-duration: 30s;
-}
-
-@keyframes snowAnimation {
+@keyframes glitterLeft {
   from {
     transform: translateX(0px);
   }
   to {
-    transform: translateX(650px);
+    transform: translateX(450px);
   }
 }
 
-// @keyframes glow {
-//   from {
-//     text-shadow: 0px 0px 10px pink, 0 0 20px pink, 0 0 30px pink, 0 0 40px pink;
-//   }
-//   to {
-//     text-shadow: 0 0 20px pink, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink;
-//   }
-// }
+.glitterRight {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: -450px;
+  bottom: 0;
+  z-index: -1;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 100px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 199px 150px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 280px 260px, #fff, transparent),
+    radial-gradient(2px 2px at 709px 651px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 432px 355px, #fff, transparent),
+    radial-gradient(2px 2px at 530px 102px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 68px 203px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 175px 310px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 430px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 323px 600px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 45px 502px, #fff, transparent);
+    background-size:  450px 450px;
+    animation: glitterRight 50s linear;
+    animation-iteration-count: infinite;
+    filter: blur(1px);
+}
+
+@keyframes glitterRight {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-450px);
+  }
+}
+
+.glitterDown {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: -450px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 100px 55px, #fff, transparent),
+    radial-gradient(1px 1px at 199px 153px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 280px 270px, #fff, transparent),
+    radial-gradient(2px 2px at 709px 668px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 432px 355px, #fff, transparent),
+    radial-gradient(2px 2px at 530px 102px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 68px 203px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 175px 310px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 430px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 323px 600px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 45px 502px, #fff, transparent);
+    background-size:  450px 450px;
+    animation: glitterDown 50s linear;
+    animation-iteration-count: infinite;
+    filter: blur(1px);
+}
+
+@keyframes glitterDown {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(450px);
+  }
+}
+
+.glitterUp {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 70px;
+  bottom: -450px;
+  z-index: -1;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 100px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 199px 150px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 280px 260px, #fff, transparent),
+    radial-gradient(2px 2px at 709px 651px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 432px 355px, #fff, transparent),
+    radial-gradient(2px 2px at 530px 102px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 68px 203px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 175px 310px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 430px, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 323px 600px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 45px 502px, #fff, transparent);
+    background-size:  450px 450px;
+    animation: glitterUp 50s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glitterUp {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-450px);
+  }
+}

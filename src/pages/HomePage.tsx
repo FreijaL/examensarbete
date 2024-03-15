@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import CharacterCard from "../components/CharacterCard";
 import Header from "../components/Header";
 import NavigationCard from "../components/NavigationCard";
 import { useTheme } from "../contexts/Theme.context";
@@ -17,6 +16,7 @@ function HomePage() {
     TODO:
     - close menu and theme when click outside
     - useAnimate may be necessary for multiple animations (sorting hat)
+    - if in active navMenu, show hovereffect
     */
     
         // const [ scope, animate] = useAnimate();
@@ -37,10 +37,10 @@ function HomePage() {
                 </section>
                 <section className={style.cardWrapper}>
                     <NavigationCard 
-                        img="https://i.pinimg.com/564x/75/83/63/758363a084bf046402e60639ff2300d5.jpg" 
+                        img="https://i.pinimg.com/474x/05/4d/27/054d27bcf0f34fbd26c05b155237deea.jpg" 
                         imgName="SortingHat" 
                         text="Get sorted now!"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/sortinghat")}
                     />
                     <NavigationCard 
                         img="https://i.pinimg.com/474x/4c/43/3d/4c433dae9cadd2dc9b5c8854530f68c0.jpg" 
@@ -60,6 +60,30 @@ function HomePage() {
                         text="Photo gallery" 
                         onClick={() => navigate("/photogallery")}
                     />
+                    {/* <NavigationCard 
+                        img="https://i.pinimg.com/474x/74/0d/10/740d10c4d10333fb6373f34b338c00c5.jpg" 
+                        imgName="Hogwarts Logo" 
+                        text="House information" 
+                        onClick={() => navigate("/houseinformation")}
+                    />
+                    <NavigationCard 
+                        img="https://i.pinimg.com/474x/d0/38/22/d03822e046366cef7a0d7d2eeb1eed02.jpg" 
+                        imgName="Hogwarts" 
+                        text="Photo gallery" 
+                        onClick={() => navigate("/photogallery")}
+                    />
+                    <NavigationCard 
+                        img="https://i.pinimg.com/474x/d0/38/22/d03822e046366cef7a0d7d2eeb1eed02.jpg" 
+                        imgName="Hogwarts" 
+                        text="Photo gallery" 
+                        onClick={() => navigate("/photogallery")}
+                    />
+                    <NavigationCard 
+                        img="https://i.pinimg.com/474x/d0/38/22/d03822e046366cef7a0d7d2eeb1eed02.jpg" 
+                        imgName="Hogwarts" 
+                        text="Photo gallery" 
+                        onClick={() => navigate("/photogallery")}
+                    /> */}
                 </section>
             </main>
             <Footer />

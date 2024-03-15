@@ -1,10 +1,6 @@
 import style from "./styles/PhotoCard.module.scss";
 import { motion } from "framer-motion";
-
-interface PhotoProps {
-    name: string;
-    url: string;
-}
+import { PhotoProps } from "../interface/interface";
 
 function PhotoCard({name, url}: PhotoProps): JSX.Element {
 

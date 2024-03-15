@@ -6,6 +6,7 @@ import CharactersPage from './pages/CharactersPage';
 import PhotoGallery from './pages/PhotoGallery';
 import SortingHatPage from './pages/SortingHatPage';
 import HouseInformationPage from './pages/HouseInformationPage';
+import CharacterInfoPage from './pages/CharacterInfoPage';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/spells" element={<SpellsPage />} />
         <Route path="/characters" element={<CharactersPage />} />
+        <Route path="/characters/info/:id" element={<CharacterInfoPage />} />
         <Route path="/sortinghat" element={<SortingHatPage />} />
         <Route path="/photogallery" element={<PhotoGallery />} />
         <Route path="/houseinformation" element={<HouseInformationPage />} />
