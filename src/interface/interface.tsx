@@ -37,10 +37,11 @@ export interface ButtonProps {
 }
 
 export interface NavigationCardProps {
-    img: string,
-    imgName: string,
-    text: string,
-    onClick: () => void,
+    img: string;
+    imgName: string;
+    text: string;
+    onClick: () => void;
+    data?: object;
 }
 
 export interface PaginationProps {
@@ -53,4 +54,10 @@ export interface PaginationProps {
 export interface PhotoProps {
     name: string;
     url: string;
+}
+
+export interface HouseInformation {
+    id: string;
+    house: string;
+    text: string;
 }

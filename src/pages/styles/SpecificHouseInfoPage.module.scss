@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.pageContainer {
+    width: 100%;
+    @include flex-column;
+    margin-top: 2rem;
+}
+
+.textContainer {
+    width: 60%;
+    @include flex-column;
+    gap: 2rem;
+}
+
+.textContainer h2 {
+    // color: var(--text);
+    font-family: $titleFont;
+}
+
+.textContainer p {
+    // font-family: $titleFont;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 50px 5px var(--text);
+}

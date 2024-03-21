@@ -3,10 +3,11 @@ import './App.scss';
 import HomePage from './pages/HomePage';
 import SpellsPage from './pages/SpellsPage';
 import CharactersPage from './pages/CharactersPage';
-import PhotoGallery from './pages/PhotoGallery';
-import SortingHatPage from './pages/SortingHatPage';
-import HouseInformationPage from './pages/HouseInformationPage';
 import CharacterInfoPage from './pages/CharacterInfoPage';
+import SortingHatPage from './pages/SortingHatPage';
+import PhotoGallery from './pages/PhotoGallery';
+import HouseInformationPage from './pages/HouseInformationPage';
+import SpecificHouseInfoPage from './pages/SpecificHouseInfoPage';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/sortinghat" element={<SortingHatPage />} />
         <Route path="/photogallery" element={<PhotoGallery />} />
         <Route path="/houseinformation" element={<HouseInformationPage />} />
+        <Route path="/houseinformation/:id" element={<SpecificHouseInfoPage />} />
       </Routes>
     </BrowserRouter>
   )

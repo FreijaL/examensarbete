@@ -22,7 +22,6 @@ function PhotoGallery() {
         }
         const data: Image[] = await response.json();
         setPhotos(data);
-        console.log(photos);
     }
 
     useEffect(() => {

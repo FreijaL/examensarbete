@@ -15,7 +15,7 @@ function Header(): ReactNode {
 
     const [showMenu, setShowMenu] = useState(false);
     const [openColorTheme, setOpenColorTheme] = useState(false);
-    const [flip, setFlip] = useState(false);
+    // const [flip, setFlip] = useState(false);
 
     useEffect(() => {
         function handleClick(e: MouseEvent){
@@ -53,7 +53,7 @@ function Header(): ReactNode {
                             scale: 1.1,
                             y: -10
                         }}
-                        animate={{ rotateY: flip ? 360 : 0  }}
+                        // animate={{ rotateY: flip ? 360 : 0  }}
                         transition={{ duration: 1}}
                     />
                 </section>
@@ -68,7 +68,7 @@ function Header(): ReactNode {
             <NavMenu />
             <Menu isVisible={showMenu} />
             {
-                openColorTheme && <ColorTheme /> 
+                openColorTheme && <ColorTheme modal={openColorTheme} setModal={setOpenColorTheme} />
             }
         </>
     )

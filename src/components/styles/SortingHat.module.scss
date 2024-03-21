@@ -1,7 +1,8 @@
 @import "../../variables";
 
 .headingContainer {
-    padding: 4rem;
+    padding: 1rem 0 5rem 0;
+    @include flex-column;
 }
 
 .headingContainer h2 {
@@ -12,37 +13,52 @@
 .button {
     width: auto;
     height: auto;
-    padding: 1.5rem;
-    background-color: white;
+    padding: 1rem;
+    background-color: var(--text);
     border: none;
     border-style: none;
     border-radius: 1rem;
     font-family: inherit;
+    font-size: 18px;
+    display: block;
     // font-weight: bold;
+    box-shadow: 0 5px 15px var(--text);
 }
 
 .button:hover {
-    box-shadow: 0 5px 15px white;
+    scale: 1.1;
+}
+
+.hidden {
+    display: none;
 }
 
 .questionForm {
+    width: 40rem;
     @include flex-column;
+    align-items: center;
     color: white;
     font-family: $titleFont;
+    margin-top: -4rem;
 }
 
 .form {
+    max-width: 100%;
     @include flex-column;
     align-items: start;
-    gap: 2rem
+    gap: 2rem;
+    font-family: $breadFont;
+    font-size: 20px;
 }
 
 .answerContainer {
     @include flex-row;
     justify-content: center;
+    color: var(--text);
 }
 
 .radioButton {
     width: 1.2rem;
     height: 1.2rem;
+    // margin-right: 5rem;
 }

@@ -2,12 +2,16 @@ import { ReactNode, useEffect, useState } from "react";
 import style from "./styles/SortingHat.module.scss"
 import { motion, useAnimation } from "framer-motion";
 import { Question, Option } from "../interface/interface";
+import { houseTheme2 } from "../functions/colorFunction";
 
 function SortingHat(): ReactNode {
 
     const [questions, setQuestions] = useState<Question[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+    const [isButtonVisible, setIsButtonVisible] = useState(true);
+    const [userAnswers, setUserAnswers] = useState<string[]>([]);
+    let mostVotedHouse;
 
     const fetchQuestions = async () => {
         try {
@@ -23,21 +27,60 @@ function SortingHat(): ReactNode {
     }
 
     useEffect(() => {
-        fetchQuestions();
+        // fetchQuestions();
         startAnimation();
     }, [])
 
-    const handleAnswer = (answer: string) => {
-        setSelectedAnswer(answer);
-
+    const handleAnswer = (option: Option) => {
+        const updatedUserAnswers = [...userAnswers, option.house];
+        setUserAnswers(updatedUserAnswers);
+        setSelectedAnswer(option);
         setTimeout(() => {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
                 setSelectedAnswer(null)
-        }, 1000);
+        }, 500);
     }
 
-    const allQueationsAnswered = currentQuestionIndex >= questions.length;
+    const allQuestionsAnswered = currentQuestionIndex >= questions.length;
     const currentQuestion = questions[currentQuestionIndex];
+
+    const countUserAnswers = (house: string) => {
+        return userAnswers.filter(answer => answer === house).length;
+    }
+
+    const houseVotes = {
+        Hufflepuff: countUserAnswers('Hufflepuff'),
+        Ravenclaw: countUserAnswers('Ravenclaw'),
+        Gryffindor: countUserAnswers('Gryffindor'),
+        Slytherin: countUserAnswers('Slytherin'),
+    };
+
+    console.log(houseVotes);
+    
+    const findMosteVotedHouse = () => {
+        const voteCounts = Object.values(houseVotes);
+        const mostVotes = Math.max(...voteCounts);
+        const tiedHouses = Object.keys(houseVotes).filter(house => houseVotes[house] === mostVotes)
+
+        if (tiedHouses.length > 1){
+            mostVotedHouse = tiedHouses[Math.floor(Math.random() * tiedHouses.length)];
+        } else {
+            mostVotedHouse = tiedHouses[0];
+        }
+
+        return mostVotedHouse;
+    }
+
+    // const mostVotedHouse = findMosteVotedHouse();
+    // console.log(findMosteVotedHouse());
+    
+    
+    
+    useEffect(() => {
+        if (!isButtonVisible){
+            fetchQuestions();
+        }
+    }, [isButtonVisible])
 
     const animation = useAnimation();
     const animation2 = useAnimation();
@@ -51,89 +94,93 @@ function SortingHat(): ReactNode {
             scale: 1.5,
             opacity: 1,
             transition: {
-                duration: 2
+                duration: .5 //2
             }
         })
         await animation.start({
             opacity: 0,
             transition: {
-                delay: 1.5
+                delay: 0// 1.5
             }
         })
         await animation2.start({
             scale: 2,
             opacity: 1,
             transition: {
-                delay: .5,
-                duration: 3
+                delay: 0, //.5,
+                duration: .5, //3
             }
         })
         await animation2.start({
             display: "none",
             transition: {
-                delay: 4
+                delay: 0, //4
             }
         })
         await animation3.start({
             scale: 2,
             opacity: 1,
             transition: {
-                delay: .5,
-                duration: 3
+                delay: 0, // .5,
+                duration: .5, // 3
             }
         })
         await animation3.start({
             display: "none",
             transition: {
-                delay: 4
+                delay: 0, // 4
             }
         })
         await animation4.start({
             scale: 2,
             opacity: 1,
             transition: {
-                delay: .5,
-                duration: 3
+                delay: 0, // .5,
+                duration: .5, // 3
             }
         })
         await animation4.start({
             display: "none",
             transition: {
-                delay: 4
+                delay: 0, // 4
             }
         })
         await animation5.start({
             scale: 2,
             opacity: 1,
             transition: {
-                delay: .5,
-                duration: 3
+                delay: 0, // .5,
+                duration: .5, //3
             }
         })
         await animation5.start({
             display: "none",
             transition: {
-                delay: 4
+                delay: 0, // 4
             }
         })
         await animation6.start({
             opacity: 1,
             transition: {
                 delay: .5,
-                duration: 3
+                duration: .5, // 3
             }
         })
     }
 
+    const colorTheme = houseTheme2(mostVotedHouse);
+
+    const houseColor = {
+        color: colorTheme
+    }
+
     return (
-        <section>
-            {/* <iframe src="https://assets.pinterest.com/ext/embed.html?id=12173861484230490" height="700" width="600" frameborder="0" scrolling="no" ></iframe> */}
             <section className={style.headingContainer}>      
                 <section>
                     <motion.img 
                         src="../../public/svg/sortingHat.png"
                         initial={{ rotateZ: 0}}
-                        animate={{ rotateZ: [10, -10, 10]}}
+                        animate={{ rotateZ: [8, -8, 8]}}
                         transition={{ 
                             duration: 15,
                             repeat: Infinity
@@ -178,44 +225,52 @@ function SortingHat(): ReactNode {
                     Those cunning folk use any means<br></br>
                     to achieve their ends.
                 </motion.h3>
-                <motion.button 
-                    className={style.button}
-                    initial={{ opacity: 0 }}
-                    animate={animation6}
-                    onClick={() => handleAnswer("")}
-                    >Begin the sortering
-                </motion.button>
+                {
+                    isButtonVisible &&  (
+                        <motion.button 
+                            className={`${style.button} ${isButtonVisible ? "" : style.hidden}`}
+                            initial={{ opacity: 0 }}
+                            animate={animation6}
+                            onClick={() => setIsButtonVisible(false)}
+                            >Begin the sortering
+                        </motion.button>
+                    )
+                }
+                
                 <section>
                     {
-                        allQueationsAnswered ? (
-                            <p>All questions answered, result pending</p>
-                        ) :  (
-                            <section className={style.questionForm}>
-                                <h2>{currentQuestion.question}</h2>
-                                <ul className={style.form}>
-                                    {
-                                        currentQuestion.options.map((option, index) => (
-                                            <li key={index} className={style.answerContainer}>
-                                                <input 
-                                                    className={style.radioButton}
-                                                    type="radio" 
-                                                    name="answer" 
-                                                    id={option.house}
-                                                    value={option.answer}
-                                                    checked={selectedAnswer === option.answer} 
-                                                    onChange={() => handleAnswer(option.answer)}
-                                                />
-                                                <label htmlFor={option.house}>{option.answer}</label>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </section>
-                        )
+                        !isButtonVisible && currentQuestion &&
+                            ( 
+                                <section className={style.questionForm}>
+                                    <h2>{currentQuestion.question}</h2>
+                                    <ul className={style.form}>
+                                        {
+                                            currentQuestion.options.map((option, index) => (
+                                                <li key={index} className={style.answerContainer}>
+                                                    <input 
+                                                        className={style.radioButton}
+                                                        type="radio" 
+                                                        name="answer" 
+                                                        id={option.house}
+                                                        value={option.answer}
+                                                        checked={selectedAnswer === option.answer} 
+                                                        onChange={() => handleAnswer(option)}
+                                                    />
+                                                    <label htmlFor={option.house}>{option.answer}</label>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
+                                </section>
+                            )
+                    }
+                    {
+                        allQuestionsAnswered ? (
+                            <p>You are a true <span style={houseColor}>{findMosteVotedHouse()}</span></p>
+                        ) : ""
                     }
                 </section>
             </section>
-        </section>
     )
 }
 

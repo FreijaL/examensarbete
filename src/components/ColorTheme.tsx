@@ -8,8 +8,9 @@ import logoSlytherin from "/svg/slytherin.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { buttonAnimation } from "../interface/animations";
+import Modal from "./Modal";
 
-function ColorTheme() {
+function ColorTheme({modal, setModal}) {
 
     const { theme, setCurrentTheme } = useTheme();
     const [activeLogo, setActiveLogo] = useState<string>(logoHouses);
@@ -31,9 +32,14 @@ function ColorTheme() {
         localStorage.setItem('logo', logo);
     };
 
+    function registerClick() {
+        setModal(prevState => !prevState)
+    }
+
     return (
         <section 
             className={style.backdrop}>
+                <Modal action={() => registerClick()} />
             <main 
                 className={style.pageContainer}
                 style={{ ...theme as React.CSSProperties }}

@@ -1,12 +1,35 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavigationCard from "../components/NavigationCard";
 import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/HouseInformationPage.module.scss";
+import { useEffect, useState } from "react";
+import { HouseInformation } from "../interface/interface";
+
 
 function HouseInformationPage() {
 
     const { theme } = useTheme();
+    const navigate = useNavigate();
+    const [houses, setHouses] = useState<HouseInformation[]>([]);
+
+    const fetchData = async () => {
+        const response = await fetch("../../houseInfo.json");
+        if (!response.ok) {
+            throw new Error("Faild to fetch data");
+        }
+        const data: HouseInformation[] = await response.json();            
+        setHouses(data);
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    const handleCardClick = (house: HouseInformation) => {
+        navigate(`/houseinformation/${house.house}`, { state: { house: house }});
+    }
 
     return(
         <>
@@ -16,10 +39,18 @@ function HouseInformationPage() {
                     <p>Click on the house you wolud like to learn more about. Take quizes and join the family!</p>
                 </section>
                 <section className={style.cardWrapper}>
-                    <NavigationCard img="./svg/gryffindor.png" imgName="Gryffindor" text="Gryffindor" onClick={() => "#"} />
-                    <NavigationCard img="./svg/hufflepuff.png" imgName="Hufflepuff" text="Hufflepuff" onClick={() => "#"} />
-                    <NavigationCard img="./svg/ravenclaw.png" imgName="Ravenclaw" text="Ravenclaw" onClick={() => "#"} />
-                    <NavigationCard img="./svg/slytherin.png" imgName="Slytherin" text="Slytherin" onClick={() => "#"} />
+                    {
+                        houses && houses.map(house => (
+                            <NavigationCard 
+                                key={house.id}
+                                onClick={() => handleCardClick(house)} 
+                                img={`./svg/${house.house}.png`}
+                                imgName={house.house} 
+                                text={house.house}
+                                data={house}
+                            />
+                        ))
+                    }
                 </section>
             </main>
             <Footer />

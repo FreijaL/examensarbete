@@ -1,20 +1,46 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/NavMenu.module.scss";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 function NavMenu() {
+
+    /* 
+        TODO
+        - if time, ev change from navigate to useLOcation to make it work with styling on active navMenu
+    */
 
     const navigate = useNavigate();
     const { theme } = useTheme();
     const [activeTab, setActiveTab] = useState(0);
 
     const handleTabClick = (tabNumber: number) =>{
-        console.log("handle");
-        
         setActiveTab(tabNumber)
+        // switch (tabNumber) {
+        //     case 1:
+        //         navigate("/spells");
+        //         break;
+            
+        //     case 2:
+        //         navigate("/characters");
+        //         break;
+            
+        //     case 3:
+        //         navigate("/sortinghat");
+        //         break;
+            
+        //     case 4:
+        //         navigate("/photogallery");
+        //         break;
+            
+        //     case 5:
+        //         navigate("/houseinformation");
+        //         break;
+        //     default:
+        //         break;
+        // }
     }
 
     return (
@@ -26,31 +52,31 @@ function NavMenu() {
                 className={style.navUl}
             >
                 <motion.li
-                    className={activeTab === 1 ? "active" : ""}
-                    onClick={ () => {navigate("/spells"), handleTabClick(1)}}
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}
+                    onClick={ () => {navigate("/spells"); handleTabClick(1)}}
+                    className={activeTab === 1 ? style.active : ""}
                 >Spells</motion.li>
                 <motion.li
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}                
                 >Quotes</motion.li>
                 <motion.li
-                    className={activeTab === 2 ? "active" : ""}
-                    onClick={ () => {navigate("/characters"), handleTabClick(2)}}
+                    onClick={ () => {navigate("/characters"); handleTabClick(2)}}
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}                
+                    className={activeTab === 2 ? style.active : ""}
                 >Characters</motion.li>
                 <motion.li
-                    className={activeTab === 3 ? "active" : ""}
-                    onClick={ () => {navigate("/sortinghat"), handleTabClick(3)}}
+                    className={activeTab === 3 ? style.active : ""}
+                    onClick={ () => {navigate("/sortinghat"); handleTabClick(3)}}
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}                
                 >Sorting Hat</motion.li>
                 <motion.li
-                    className={activeTab === 4 ? "active" : ""}
-                    onClick={ () => {navigate("/photogallery"), handleTabClick(4)}}
+                    className={activeTab === 4 ? style.active : ""}
+                    onClick={ () => {navigate("/photogallery"); handleTabClick(4)}}
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}                
                 >Photo Gallery</motion.li>
                 <motion.li
-                    className={activeTab === 5 ? "active" : ""}
-                    onClick={ () => {navigate("/houseinformation"), handleTabClick(5)}}
+                    className={activeTab === 5 ? style.active : ""}
+                    onClick={ () => {navigate("/houseinformation"); handleTabClick(5)}}
                     whileHover={{ scale: 1.3, textShadow: "0 8px 2.5px var(--text)"}}
                 >House Information</motion.li>
             </motion.ul>

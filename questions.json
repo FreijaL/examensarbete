@@ -84,7 +84,7 @@
             {
                 "answer": "An environment where you can develop your skills", 
                 "house": "Slytherin"
-            },
+            }
         ]
     },
     {
@@ -128,7 +128,7 @@
             {
                 "answer": "The traditions and chances to create new experiences", 
                 "house": "Gryffindor"
-            },
+            }
         ]
     },
     {
@@ -150,7 +150,7 @@
             {
                 "answer": "Achieving wealth and success", 
                 "house": "Slytherin"
-            },
+            }
         ]
     },
     {
@@ -172,7 +172,7 @@
             {
                 "answer": "Solving puzzles or riddles", 
                 "house": "Ravenclaw"
-            },
+            }
         ]
     },
     {
