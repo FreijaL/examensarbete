@@ -1,5 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
-import { Character } from "../interface/interface";
+import { useLocation} from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { houseTheme } from "../functions/colorFunction";
@@ -13,13 +12,11 @@ function CharacterInfoPage() {
     const { character } = location.state || {};
     
     const colorTheme = houseTheme(character);
-
     const houseColor = {
         color: colorTheme
     }
 
     window.scrollTo(0, 0);
-
 
     return(
         <>

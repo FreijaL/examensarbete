@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { buttonAnimation } from "../interface/animations";
 import Modal from "./Modal";
 
+
 function ColorTheme({modal, setModal}) {
 
     const { theme, setCurrentTheme } = useTheme();
@@ -23,6 +24,7 @@ function ColorTheme({modal, setModal}) {
             setCurrentTheme(savedTheme);
             setActiveLogo(savedLogo);
         }
+
     }, []);
 
     const handleThemeChange = (theme, logo) => {
@@ -81,19 +83,5 @@ function ColorTheme({modal, setModal}) {
         </section>
     )
 }
-
-// function currentTheme(theme) {
-//     if (theme === "Gryffindor") {
-//         return logoGryffindor
-//     } else if (theme === "Hufflepuff") {
-//         return logoHufflepuff
-//     } else if (theme === "Ravenclaw") {
-//         return logoRavenclaw
-//     } else if (theme === "Slytherin") {
-//         return logoSlytherin
-//     } else {
-//         return logoHouses
-//     }
-// }
 
 export default ColorTheme;

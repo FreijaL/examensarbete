@@ -1,8 +1,9 @@
+import { SpellProps } from "../interface/interface";
 import style from "./styles/Spells.module.scss";
 import { motion } from "framer-motion";
 
-function Spells({spell}) {
 
+function Spells({spell}: SpellProps): JSX.Element {
 
     return (
         <motion.section 

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import style from "./styles/NavigationCard.module.scss";
 import { motion } from "framer-motion";
 import { NavigationCardProps } from "../interface/interface";

@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from "../contexts/Theme.context";
 import style from "./styles/NavMenu.module.scss";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 function NavMenu() {
@@ -18,29 +18,6 @@ function NavMenu() {
 
     const handleTabClick = (tabNumber: number) =>{
         setActiveTab(tabNumber)
-        // switch (tabNumber) {
-        //     case 1:
-        //         navigate("/spells");
-        //         break;
-            
-        //     case 2:
-        //         navigate("/characters");
-        //         break;
-            
-        //     case 3:
-        //         navigate("/sortinghat");
-        //         break;
-            
-        //     case 4:
-        //         navigate("/photogallery");
-        //         break;
-            
-        //     case 5:
-        //         navigate("/houseinformation");
-        //         break;
-        //     default:
-        //         break;
-        // }
     }
 
     return (

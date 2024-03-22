@@ -1,8 +1,10 @@
 import style from "./styles/PixelBackground.module.scss";
 import { motion } from "framer-motion";
 import { pixelAnimation } from "../interface/animations";
+import { NewSpellProps, SpellProps } from "../interface/interface";
 
-function PixelBackground({newSpell}) {
+
+function PixelBackground({newSpell}: NewSpellProps): JSX.Element {
 
     const shuffle = (a) => {
         var j, x, i;

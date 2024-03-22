@@ -61,3 +61,32 @@ export interface HouseInformation {
     house: string;
     text: string;
 }
+
+export interface SpellProps {
+    spell: {
+        name: string;
+        description: string;
+    }
+}
+
+export interface NewSpellProps {
+    newSpell: () => void;
+}
+
+export interface QuestionFormProps {
+    question: string;
+    answers: [object];
+}
+
+export type MenuProps = {
+    isVisible: boolean,
+}
+
+export interface CardProps {
+    id: string;
+    image: string;
+    name: string;
+    house?: string;
+    theme?: string;
+    characterData: object;
+}

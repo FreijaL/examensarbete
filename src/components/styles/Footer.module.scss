@@ -16,3 +16,8 @@
     width: 25px;
     height: 25px;
 }
+
+.links, .links:visited {
+    color: $primaryWhite;
+    text-decoration: none;
+}

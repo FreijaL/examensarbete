@@ -1,7 +1,5 @@
 @import "../../variables";
 
-
-
 .navLink {
     font-size: 2em;
     text-decoration: none;
@@ -11,7 +9,7 @@
     border-radius: 1rem;
 }
 
-.navLink:hover, .active {
+.navLink:hover, .active, .arrow:hover {
     background-color: $primaryWhite;
     color: $primaryBlack;
 }
@@ -23,9 +21,4 @@
     color: $primaryWhite;
     padding-bottom: 10px;
     border-radius: 1rem;
-}
-
-.arrow:hover {
-    background-color: $primaryWhite;
-    color: $primaryBlack;
 }

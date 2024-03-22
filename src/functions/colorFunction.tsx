@@ -1,4 +1,4 @@
-import { Character, HouseInformation } from "../interface/interface";
+import { Character } from "../interface/interface";
 
 export function houseTheme(character: Character) {
     if (character.house === "Gryffindor"){

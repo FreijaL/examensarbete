@@ -1,9 +1,6 @@
+import { QuestionFormProps } from "../interface/interface";
 import style from "./styles/QuestionForm.module.scss";
 
-interface QuestionFormProps {
-    question: string;
-    answers: [object];
-}
 
 function QuestionForm({question, answers}: QuestionFormProps): JSX.Element {
 
@@ -21,18 +18,6 @@ function QuestionForm({question, answers}: QuestionFormProps): JSX.Element {
                     )
                     })
                 }
-                {/* <section className={style.answerContainer}>
-                    <input type="radio" id="answer2" name="question1" className={style.radioButton} />
-                    <label htmlFor="answer2">Answer 2</label>
-                </section>
-                <section className={style.answerContainer}>
-                    <input type="radio" id="answer2" name="question1" className={style.radioButton} />
-                    <label htmlFor="answer2">Answer 3</label>
-                </section>
-                <section className={style.answerContainer}>
-                    <input type="radio" id="answer2" name="question1" className={style.radioButton} />
-                    <label htmlFor="answer2">Answer 4</label>
-                </section> */}
             </form>
         </section>
     )

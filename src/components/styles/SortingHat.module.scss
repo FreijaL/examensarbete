@@ -21,8 +21,8 @@
     font-family: inherit;
     font-size: 18px;
     display: block;
-    // font-weight: bold;
     box-shadow: 0 5px 15px var(--text);
+    margin-bottom: 6rem;
 }
 
 .button:hover {
@@ -60,5 +60,8 @@
 .radioButton {
     width: 1.2rem;
     height: 1.2rem;
-    // margin-right: 5rem;
+}
+
+.mostVotedHouse {
+    font-size: 30px;
 }

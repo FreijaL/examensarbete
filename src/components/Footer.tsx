@@ -10,9 +10,8 @@ function Footer() {
                 <p>Frontend student</p>
             </section>
             <section>
-                <img className={style.logo} src="./svg/linkedin-svgrepo-com.svg" alt="LinkedIn-logo" />
-                <p>Pictures from <img className={style.logo} src="./svg/pintrest-svgrepo-com.svg" alt="Pintrest-Logo"/></p>
-                {/* <p>Här står något viktigt</p> */}
+                <p>Visit my <a className={style.links} href="https://www.linkedin.com/in/freija-lindkvist-7725a8260/">LinkedIn</a></p>
+                <p>Pictures from <a className={style.links} href="https://www.pinterest.se/">Pintrest</a></p>
             </section>
         </footer>
     )

@@ -15,16 +15,13 @@ function Header(): ReactNode {
 
     const [showMenu, setShowMenu] = useState(false);
     const [openColorTheme, setOpenColorTheme] = useState(false);
-    // const [flip, setFlip] = useState(false);
 
     useEffect(() => {
         function handleClick(e: MouseEvent){
             setTimeout(() => {
-                
                 const menu = document.querySelector(".menuContainer");
-                // console.log(menu);
+
                 if (showMenu && menu && !menu.contains(e.target as Node)){
-                    console.log(e.target);
                     setShowMenu(false)
                 }
             }, 0);
@@ -44,7 +41,6 @@ function Header(): ReactNode {
             >
                 <section className={style.menuIconContainer}>
                     <motion.img 
-                        // onClick={() => (setShowMenu(prevstate => !prevstate), setFlip(!flip))}
                         className={`${style.menuIcon} ${ showMenu ? style.active : style.inactive }`} 
                         src="../../svg/plattformKingCross.png" 
 
@@ -53,7 +49,6 @@ function Header(): ReactNode {
                             scale: 1.1,
                             y: -10
                         }}
-                        // animate={{ rotateY: flip ? 360 : 0  }}
                         transition={{ duration: 1}}
                     />
                 </section>
