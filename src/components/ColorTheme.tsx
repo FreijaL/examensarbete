@@ -11,13 +11,13 @@ import { buttonAnimation } from "../interface/animations";
 import Modal from "./Modal";
 
 interface ModalProps {
-    modal: boolean;
+    modal?: boolean;
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 type ThemeType = 'red' | 'green' | 'yellow' | 'blue' | 'dark';
 
-function ColorTheme({modal, setModal}: ModalProps ): JSX.Element {
+function ColorTheme({setModal}: ModalProps ): JSX.Element {
 
     const { theme, setCurrentTheme } = useTheme();
     const [activeLogo, setActiveLogo] = useState<string>(logoHouses);

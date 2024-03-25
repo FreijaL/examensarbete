@@ -168,8 +168,6 @@ function SortingHat(): ReactNode {
     useEffect(() => {
         if(allQuestionsAnswered && currentQuestionIndex === questions.length) {
             setMostVotedHouse(findMosteVotedHouse());
-
-            // localStorage.setItem("mostVotedHouse", mostVotedHouse);
         } else {
             setMostVotedHouse("")
         }
@@ -271,7 +269,7 @@ function SortingHat(): ReactNode {
                                                     name="answer" 
                                                     id={option.house}
                                                     value={option.answer}
-                                                    checked={selectedAnswer === option.answer} 
+                                                    checked={selectedAnswer === option} 
                                                     onChange={() => handleAnswer(option)}
                                                 />
                                                 <label htmlFor={option.house}>{option.answer}</label>

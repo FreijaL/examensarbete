@@ -71,7 +71,7 @@ export interface SpellProps {
 
 export interface NewSpellProps {
     id?: string;
-    newSpell: () => void;
+    newSpell: { id: string};
 }
 
 export interface Answer {

@@ -37,7 +37,7 @@ function PixelBackground({newSpell}: NewSpellProps): JSX.Element {
     }
 
     return (
-        <div className={style.pixelBackground} key={newSpell?.id}>
+        <div className={style.pixelBackground} key={newSpell && newSpell.id}>
             {
                 [...Array(50)].map((_, i) => {
                     return <div className={style.column} key={i}>
