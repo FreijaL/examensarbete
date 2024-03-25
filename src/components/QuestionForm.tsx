@@ -2,6 +2,7 @@ import { QuestionFormProps } from "../interface/interface";
 import style from "./styles/QuestionForm.module.scss";
 
 
+
 function QuestionForm({question, answers}: QuestionFormProps): JSX.Element {
 
     return(

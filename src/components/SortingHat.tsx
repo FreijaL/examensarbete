@@ -4,18 +4,20 @@ import { motion, useAnimation } from "framer-motion";
 import { Question, Option } from "../interface/interface";
 import { houseTheme2 } from "../functions/colorFunction";
 
+type House = 'Hufflepuff' | 'Ravenclaw' | 'Gryffindor' | 'Slytherin';
+
 function SortingHat(): ReactNode {
 
     const [questions, setQuestions] = useState<Question[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+    const [selectedAnswer, setSelectedAnswer] = useState<Option | null>(null);
     const [isButtonVisible, setIsButtonVisible] = useState(true);
     const [userAnswers, setUserAnswers] = useState<string[]>([]);
     const [mostVotedHouse, setMostVotedHouse] = useState("");
 
     const fetchQuestions = async () => {
         try {
-            const response = await fetch("../../questions.json");
+            const response = await fetch("../../data/questions.json");
             if (!response.ok) {
                 throw new Error("Faild to fetch data");
             }
@@ -47,7 +49,7 @@ function SortingHat(): ReactNode {
         return userAnswers.filter(answer => answer === house).length;
     }
 
-    const houseVotes = {
+    const houseVotes: Record<House, number> = {
         Hufflepuff: countUserAnswers('Hufflepuff'),
         Ravenclaw: countUserAnswers('Ravenclaw'),
         Gryffindor: countUserAnswers('Gryffindor'),
@@ -57,7 +59,7 @@ function SortingHat(): ReactNode {
     const findMosteVotedHouse = () => {
         const voteCounts = Object.values(houseVotes);
         const mostVotes = Math.max(...voteCounts);
-        const tiedHouses = Object.keys(houseVotes).filter(house => houseVotes[house] === mostVotes)
+        const tiedHouses = Object.keys(houseVotes).filter(house => houseVotes[house as House] === mostVotes)
         let newMostVotedHouse;
 
         if (tiedHouses.length > 1){

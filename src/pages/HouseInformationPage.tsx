@@ -15,7 +15,7 @@ function HouseInformationPage() {
     const [houses, setHouses] = useState<HouseInformation[]>([]);
 
     const fetchData = async () => {
-        const response = await fetch("../../houseInfo.json");
+        const response = await fetch("../../data/houseInfo.json");
         if (!response.ok) {
             throw new Error("Faild to fetch data");
         }

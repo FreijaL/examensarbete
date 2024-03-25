@@ -18,7 +18,7 @@ function CharactersPage() {
     const [charactersPerPage] = useState<number>(12);
 
     const fetchData = async () => {
-        const response = await fetch("../../characters.json");
+        const response = await fetch("../../data/characters.json");
         if (!response.ok) {
             throw new Error("Faild to fetch data");
         }

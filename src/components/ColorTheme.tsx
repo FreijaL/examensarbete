@@ -10,8 +10,14 @@ import { motion } from "framer-motion";
 import { buttonAnimation } from "../interface/animations";
 import Modal from "./Modal";
 
+interface ModalProps {
+    modal: boolean;
+    setModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-function ColorTheme({modal, setModal}) {
+type ThemeType = 'red' | 'green' | 'yellow' | 'blue' | 'dark';
+
+function ColorTheme({modal, setModal}: ModalProps ): JSX.Element {
 
     const { theme, setCurrentTheme } = useTheme();
     const [activeLogo, setActiveLogo] = useState<string>(logoHouses);
@@ -21,14 +27,14 @@ function ColorTheme({modal, setModal}) {
         const savedLogo = localStorage.getItem('logo');
 
         if (savedTheme && savedLogo) {
-            setCurrentTheme(savedTheme);
+            setCurrentTheme(savedTheme as ThemeType);
             setActiveLogo(savedLogo);
         }
 
     }, []);
 
-    const handleThemeChange = (theme, logo) => {
-        setCurrentTheme(theme);
+    const handleThemeChange = (theme: string, logo: string) => {
+        setCurrentTheme(theme as ThemeType);
         setActiveLogo(logo);
         localStorage.setItem('theme', theme);
         localStorage.setItem('logo', logo);

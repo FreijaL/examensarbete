@@ -65,17 +65,23 @@ export interface HouseInformation {
 export interface SpellProps {
     spell: {
         name: string;
-        description: string;
+        description?: string;
     }
 }
 
 export interface NewSpellProps {
+    id?: string;
     newSpell: () => void;
+}
+
+export interface Answer {
+    house: string;
+    answer: string;
 }
 
 export interface QuestionFormProps {
     question: string;
-    answers: [object];
+    answers: Answer[];
 }
 
 export type MenuProps = {

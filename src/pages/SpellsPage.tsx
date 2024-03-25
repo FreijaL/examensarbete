@@ -16,7 +16,7 @@ function SpellsPage() {
     const [randomSpell, setRandomSpell] = useState<Spell | null >(null);
 
     const handleData = async () => {
-        const response = await fetch("https://hp-api.onrender.com/api/spells");
+        const response = await fetch("../../data/spells.json");
         const data: Spell[] = await response.json();
         setSpellsData(data); 
         if (data.length > 0) {
@@ -30,7 +30,7 @@ function SpellsPage() {
         setRandomSpell(spell);
     }
 
-    const handleNewSpell = () => {
+    const handleNewSpell = (): void => {
         getRandomSpell(spellsData);
     }
 
@@ -54,7 +54,7 @@ function SpellsPage() {
                     )
                 }
                 <Button name="New Spell" onClick={handleNewSpell} />
-                <PixelBackground newSpell={randomSpell} />
+                <PixelBackground newSpell={() => randomSpell} />
             </main>
             <Footer />
         </>

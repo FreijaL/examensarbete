@@ -1,12 +1,12 @@
 import style from "./styles/PixelBackground.module.scss";
 import { motion } from "framer-motion";
 import { pixelAnimation } from "../interface/animations";
-import { NewSpellProps, SpellProps } from "../interface/interface";
+import { NewSpellProps } from "../interface/interface";
 
 
 function PixelBackground({newSpell}: NewSpellProps): JSX.Element {
 
-    const shuffle = (a) => {
+    const shuffle = (a: any) => {
         var j, x, i;
         for (i = a.length - 1; i > 0; i--){
             j = Math.floor(Math.random() * (i + 1));
@@ -37,7 +37,7 @@ function PixelBackground({newSpell}: NewSpellProps): JSX.Element {
     }
 
     return (
-        <div className={style.pixelBackground} key={newSpell && newSpell.id}>
+        <div className={style.pixelBackground} key={newSpell?.id}>
             {
                 [...Array(50)].map((_, i) => {
                     return <div className={style.column} key={i}>
