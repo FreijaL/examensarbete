@@ -247,6 +247,7 @@ function SortingHat(): ReactNode {
                         className={`${style.button} ${isButtonVisible ? "" : style.hidden}`}
                         initial={{ opacity: 0 }}
                         animate={animation6}
+                        whileHover={{ scale: 1.1 }}
                         onClick={() => setIsButtonVisible(false)}
                         >Begin the sortering
                     </motion.button>

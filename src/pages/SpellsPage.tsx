@@ -54,7 +54,7 @@ function SpellsPage() {
                     )
                 }
                 <Button name="New Spell" onClick={handleNewSpell} />
-                <PixelBackground newSpell={() => randomSpell} />
+                <PixelBackground newSpell={randomSpell} />
             </main>
             <Footer />
         </>
