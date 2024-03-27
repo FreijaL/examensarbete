@@ -27,3 +27,17 @@ export function houseTheme2(house: string) {
         return "#ffffff"
     }
 }
+
+export function houseTheme3(house: string) {
+    if (house === "Gryffindor"){
+        return "./svg/gryffindor.png" 
+    } else if (house === "Slytherin"){
+        return "./svg/slytherin.png" 
+    } else if (house === "Hufflepuff"){
+        return "./svg/hufflepuff.png" 
+    } else if (house === "Ravenclaw"){
+        return "./svg/ravenclaw.png" 
+    } else {
+        return ;
+    }
+}

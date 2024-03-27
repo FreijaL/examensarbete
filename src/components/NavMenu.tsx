@@ -7,11 +7,6 @@ import { useState } from "react";
 
 function NavMenu() {
 
-    /* 
-        TODO
-        - if time, ev change from navigate to useLOcation to make it work with styling on active navMenu
-    */
-
     const navigate = useNavigate();
     const { theme } = useTheme();
     const [activeTab, setActiveTab] = useState(0);

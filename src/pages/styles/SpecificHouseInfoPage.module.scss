@@ -6,6 +6,15 @@
     margin-top: 2rem;
 }
 
+.heading {
+    @include flex-row;
+}
+
+.logo {
+    width: 5rem;
+    height: auto;
+}
+
 .textContainer {
     width: 60%;
     @include flex-column;
@@ -20,6 +29,9 @@
     font-size: 18px;
     line-height: 30px;
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 50px 5px var(--text);
+    border-inline-start: 5px solid;
+    border-block-start: 5px solid;
+    border-image-source: 
+        radial-gradient( circle at top left, black, var(--text) 80%);
+    border-image-slice: 1;
 }
